@@ -1,7 +1,5 @@
 Daily learning
 
-```Markdown
-
 ---
 
 # Menstrual Calender
@@ -120,5 +118,3 @@ The project is a **Single Page Application (SPA)** built with basic web technolo
 [![GitHub](https://img.shields.io/badge/GitHub-000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/njtsb1)
 
 ---
-
-```
