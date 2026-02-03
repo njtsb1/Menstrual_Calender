@@ -58,6 +58,8 @@ The design focuses on **usability** and a **pleasant visual experience**.
 
 See [original repository](https://github.com/nevesgno/Calendario-Menstrual/)
 
+<img width="1366" height="563" alt="Menstrual Calender" src="https://github.com/user-attachments/assets/f95607ed-1b5c-413a-8294-054ceb2520ec" />
+
 ---
 
 ## ✨ Main Features
