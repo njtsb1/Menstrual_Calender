@@ -1,0 +1,161 @@
+:root{
+  --bg: #ffffff;
+  --card: #f8f9fb;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --accent: #ff6b9a; /* menstruation pink */
+  --fertile: #3ec5ff; /* fertile cyan */
+  --ovulation: #4cd97b; /* ovulation green */
+  --today: #8b5cf6; /* highlight for today */
+  --border: #e6e9ef;
+  --radius: 12px;
+  --shadow: 0 6px 18px rgba(31,41,55,0.06);
+  --max-width: 980px;
+  --gap: 16px;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+/* Dark theme overrides */
+:root[data-theme="dark"]{
+  --bg: #0b1220;
+  --card: #0f1724;
+  --text: #e6eef8;
+  --muted: #9aa7bf;
+  --accent: #ff8fb0;
+  --fertile: #66d9ff;
+  --ovulation: #6be59a;
+  --today: #b794f4;
+  --border: #1f2a3a;
+  --shadow: 0 8px 24px rgba(2,6,23,0.6);
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background:linear-gradient(180deg,var(--bg),var(--card));
+  color:var(--text);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:var(--gap);
+  padding:24px;
+}
+
+/* Header */
+.app-header{
+  width:100%;
+  max-width:var(--max-width);
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+}
+.brand h1{margin:0;font-size:1.25rem}
+.tagline{margin:0;color:var(--muted);font-size:0.9rem}
+
+/* Controls */
+.controls{display:flex;align-items:center;gap:12px}
+.switch{position:relative;display:inline-block;width:44px;height:26px}
+.switch input{opacity:0;width:0;height:0}
+.slider{
+  position:absolute;cursor:pointer;top:0;left:0;right:0;bottom:0;
+  background:#cbd5e1;border-radius:999px;transition:0.2s;
+  box-shadow:inset 0 -2px 0 rgba(0,0,0,0.06);
+}
+.switch input:checked + .slider{background:linear-gradient(90deg,#6b46c1,#ff6b9a)}
+.slider:before{
+  content:"";position:absolute;height:20px;width:20px;left:3px;top:3px;
+  background:white;border-radius:50%;transition:0.2s;box-shadow:0 2px 6px rgba(0,0,0,0.12);
+}
+.switch input:checked + .slider:before{transform:translateX(18px)}
+
+/* Layout */
+.container{
+  width:100%;
+  max-width:var(--max-width);
+  display:grid;
+  grid-template-columns: 360px 1fr;
+  gap:20px;
+  align-items:start;
+}
+
+/* Cards */
+.card{
+  background:var(--card);
+  border-radius:var(--radius);
+  padding:18px;
+  box-shadow:var(--shadow);
+  border:1px solid var(--border);
+}
+
+/* Config form */
+.config h2{margin-top:0}
+.field{display:flex;flex-direction:column;margin-bottom:12px}
+.field.small{width:48%;display:inline-block}
+.field label{font-size:0.9rem;color:var(--muted);margin-bottom:6px}
+.field input[type="date"],
+.field input[type="number"]{
+  padding:10px;border-radius:8px;border:1px solid var(--border);
+  background:transparent;color:var(--text);
+  outline:none;width:100%;
+}
+.actions{display:flex;gap:10px;align-items:center;margin-top:8px}
+.btn{padding:10px 14px;border-radius:10px;border:0;cursor:pointer;font-weight:600}
+.btn.primary{background:var(--accent);color:white}
+.btn.ghost{background:transparent;border:1px solid var(--border);color:var(--text)}
+
+/* Calendar */
+.calendar-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+.nav-btn{background:transparent;border:1px solid var(--border);padding:8px;border-radius:8px;cursor:pointer}
+#monthLabel{margin:0;font-size:1.05rem}
+
+/* Grid */
+.calendar-grid{
+  display:grid;
+  grid-template-columns:repeat(7,1fr);
+  gap:8px;
+  align-items:start;
+}
+.weekday{
+  font-size:0.8rem;color:var(--muted);text-align:center;padding:6px 0;
+}
+.day{
+  min-height:72px;padding:8px;border-radius:10px;border:1px dashed transparent;
+  display:flex;flex-direction:column;justify-content:flex-start;align-items:flex-start;
+  background:transparent;position:relative;
+}
+.day .date-num{font-weight:600;margin-bottom:6px}
+.day.inactive{opacity:0.35}
+.day .dot-indicator{position:absolute;right:8px;bottom:8px;height:10px;width:10px;border-radius:50%}
+
+/* Phase colors */
+.dot.menstruation{background:var(--accent)}
+.dot.fertile{background:var(--fertile)}
+.dot.ovulation{background:var(--ovulation)}
+.dot.today{background:var(--today)}
+
+/* Mark full-day backgrounds for stronger visual cue */
+.day.menstruation{background:linear-gradient(90deg, rgba(255,107,154,0.08), transparent)}
+.day.fertile{background:linear-gradient(90deg, rgba(62,197,255,0.06), transparent)}
+.day.ovulation{background:linear-gradient(90deg, rgba(76,217,123,0.06), transparent)}
+.day.today{outline:2px solid var(--today);box-shadow:0 6px 18px rgba(139,92,246,0.08)}
+
+/* Legend */
+.legend{display:flex;gap:12px;flex-wrap:wrap;margin-top:12px;color:var(--muted)}
+.legend .dot{display:inline-block;height:12px;width:12px;border-radius:50%;margin-right:6px;vertical-align:middle}
+
+/* Footer */
+.app-footer{width:100%;max-width:var(--max-width);text-align:center;color:var(--muted);padding:8px 0}
+
+/* Accessibility helper */
+.visually-hidden{position:absolute!important;height:1px;width:1px;overflow:hidden;clip:rect(1px,1px,1px,1px);white-space:nowrap}
+
+/* Responsive */
+@media (max-width:900px){
+  .container{grid-template-columns:1fr; padding-bottom:40px}
+  .field.small{width:100%;display:block}
+  .calendar-grid .day{min-height:64px}
+}

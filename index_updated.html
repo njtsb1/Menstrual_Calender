@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Female Cycle - Menstrual Cycle Calendar</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- Default UI language is English (en-US). The language selector supports pt-BR and es-ES. -->
+</head>
+<body>
+  <header class="app-header">
+    <div class="brand">
+      <h1 id="appTitle">Female Cycle</h1>
+      <p class="tagline" id="tagline">Menstrual Cycle Calendar - Respect the menstrual cycle: empathy and dignity for all women</p>
+    </div>
+
+    <div class="controls" aria-hidden="false">
+      <label class="switch" title="Toggle dark mode">
+        <input id="darkToggle" type="checkbox" />
+        <span class="slider"></span>
+      </label>
+
+      <label for="langSelect" class="visually-hidden">Language</label>
+      <select id="langSelect" aria-label="Language selector">
+        <option value="en-US" selected>English (US)</option>
+        <option value="pt-BR">Português (BR)</option>
+        <option value="es-ES">Español (ES)</option>
+      </select>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="config card" aria-labelledby="configTitle">
+      <h2 id="configTitle">Initial Configuration</h2>
+
+      <form id="settingsForm" novalidate>
+        <div class="field">
+          <label for="lastPeriod" id="labelLastPeriod">Start of Last Period</label>
+          <input id="lastPeriod" type="date" required />
+        </div>
+
+        <div class="field small">
+          <label for="cycleLength" id="labelCycleLength">Average Cycle Length (days)</label>
+          <input id="cycleLength" type="number" min="20" max="45" value="28" required />
+        </div>
+
+        <div class="field small">
+          <label for="periodLength" id="labelPeriodLength">Average Period Length (days)</label>
+          <input id="periodLength" type="number" min="1" max="10" value="5" required />
+        </div>
+
+        <div class="actions">
+          <button id="saveBtn" type="submit" class="btn primary">Save and Calculate Cycle</button>
+          <button id="resetBtn" type="button" class="btn ghost">Reset</button>
+        </div>
+      </form>
+
+      <div class="summary" id="summary" aria-live="polite">
+        <!-- Summary of prediction will be injected here -->
+      </div>
+    </section>
+
+    <section class="calendar card" aria-labelledby="monthLabel">
+      <div class="calendar-header">
+        <button id="prevMonth" class="nav-btn" aria-label="Previous month">&lt;</button>
+        <h3 id="monthLabel">Month Year</h3>
+        <button id="nextMonth" class="nav-btn" aria-label="Next month">&gt;</button>
+      </div>
+
+      <div id="calendarGrid" class="calendar-grid" role="grid" aria-label="Calendar"></div>
+
+      <div class="legend" aria-hidden="false">
+        <span id="legendMenstruation"><i class="dot menstruation"></i> Menstruation</span>
+        <span id="legendFertile"><i class="dot fertile"></i> Fertile Window</span>
+        <span id="legendOvulation"><i class="dot ovulation"></i> Ovulation</span>
+        <span id="legendToday"><i class="dot today"></i> Today</span>
+      </div>
+
+      <div class="footer-note" id="footerNote" aria-live="polite">
+        <!-- Footer note with base prediction -->
+      </div>
+    </section>
+  </main>
+
+  <footer class="app-footer">
+    <small id="footerCredit">Developed by Gabriela Neves - Update by Nivaldo Beirão 2026</small>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
