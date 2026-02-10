@@ -82,7 +82,7 @@ The project is a **Single Page Application (SPA)** built with basic web technolo
 
 - 🧱 **HTML5:** fundamental application structure
 - ⚙️ **JavaScript (Vanilla):** predictive calculation logic, calendar manipulation, and state management
-- 🎀 **Tailwind CSS (via CDN) & Custom CSS:** modern and responsive styling, using feminine colors and themes 
+- 🎀 **Tailwind CSS (via CDN) & Custom CSS:** modern and responsive styling, using feminine colors and themes
 - 🤖 **AI usage**: addition of dark mode 🌙, and languages PT‑BR 🇧🇷, EN‑US 🇺🇸 e ES‑ES 🇪🇸.
 
 ---
@@ -91,10 +91,10 @@ The project is a **Single Page Application (SPA)** built with basic web technolo
 
 1. **Open:** simply load the application's main file (`index.html`) in any browser.
 2. **Configure the Cycle:**
-- Fill in the start date of your last period.
-- Define the average cycle length (e.g., 28 days).
-- Define the duration of menstruation (e.g., 5 days).
-3. **Save:** click on **“Save Configuration”** for the calendar to recalculate and display the predictions.
+    - Fill in the start date of your last period.
+    - Define the average cycle length (e.g., 28 days).
+    - Define the duration of menstruation (e.g., 5 days).
+3. **Save:** click on **"Save Configuration"** for the calendar to recalculate and display the predictions.
 4. **Track:** use the navigation arrows (< and >) to view the predictions for the following months.  
 
 ---
