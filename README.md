@@ -89,7 +89,7 @@ The project is a **Single Page Application (SPA)** built with basic web technolo
 
 ## 💡 How to Use
 
-1. **Open:** simply load the application's main file (`index_updated.html`) in any browser.
+1. **Open:** simply load the application's main file (`index.html`) in any browser.
 2. **Configure the Cycle:**
 - Fill in the start date of your last period.
 - Define the average cycle length (e.g., 28 days).
